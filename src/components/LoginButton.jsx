@@ -1,4 +1,5 @@
 import React, { Component, createElement } from "react";
+import jwt_decode from "jwt-decode";
 
 export class LoginButton extends Component {
     constructor(props) {
@@ -8,7 +9,6 @@ export class LoginButton extends Component {
 
     componentDidMount() {
         window.onGoogleLibraryLoad = () => {
-            console.log(this.props);
             const { clientId, type, shape, text, size, theme } = this.props;
 
             google.accounts.id.initialize({
@@ -27,8 +27,9 @@ export class LoginButton extends Component {
     }
 
     onResponse = response => {
-        console.log(response);
-        this.props.responseString.setValue(response.credential);
+        const JSONToken = jwt_decode(response.credential);
+        const JSONString = JSON.stringify(JSONToken);
+        this.props.responseString.setValue(JSONString);
     };
 
     render() {
