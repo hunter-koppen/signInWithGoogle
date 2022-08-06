@@ -28,7 +28,6 @@
     "@mendix/pluggable-widgets-tools": "^9.0.0"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
-    "react-google-login": "^5.2.2"
+    "classnames": "^2.2.6"
   }
 }

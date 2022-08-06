@@ -1,17 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="clevr.signinwithgoogle.SignInWithGoogle" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
-        supportedPlatform="Web"
-        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+<widget id="clevr.signinwithgoogle.SignInWithGoogle" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
     <name>Sign In With Google</name>
-    <description>My widget description</description>
+    <description/>
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <property key="sampleText" type="string" required="false">
-                <caption>Default value</caption>
-                <description>Sample text input</description>
-            </property>
+            <propertyGroup caption="Datasource">
+                <property key="responseString" type="attribute" onChange="onResponseAction">
+                    <caption>String Attribute</caption>
+                    <description>The attribute that will be populated with a JSON response from Google</description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+                <property key="onResponseAction" type="action">
+                    <caption>On Response Action</caption>
+                    <description>Action that will be called when a response from Google has been recieved</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Authentication">
+                <property key="clientId" type="expression" defaultValue="">
+                    <caption>Client ID</caption>
+                    <description/>
+                    <returnType type="String" />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Button Settings">
+                <property key="type" type="enumeration" defaultValue="standard">
+                    <caption>Button Type</caption>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="standard">Standard</enumerationValue>
+                        <enumerationValue key="icon">Icon</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="shape" type="enumeration" defaultValue="rectangular">
+                    <caption>Button Shape</caption>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="rectangular">Rectangular</enumerationValue>
+                        <enumerationValue key="pill">Pill</enumerationValue>
+                        <enumerationValue key="circle">Circle</enumerationValue>
+                        <enumerationValue key="square">Square</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="text" type="enumeration" defaultValue="signin_with">
+                    <caption>Button Text types</caption>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="signin_with">Signin with</enumerationValue>
+                        <enumerationValue key="signup_with">Signup with</enumerationValue>
+                        <enumerationValue key="continue_with">Continue with</enumerationValue>
+                        <enumerationValue key="signin">Signin</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="size" type="enumeration" defaultValue="large">
+                    <caption>Button Size</caption>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="large">Large</enumerationValue>
+                        <enumerationValue key="medium">Medium</enumerationValue>
+                        <enumerationValue key="small">Small</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="theme" type="enumeration" defaultValue="outline">
+                    <caption>Button Theme</caption>
+                    <description/>
+                    <enumerationValues>
+                        <enumerationValue key="outline">Outline</enumerationValue>
+                        <enumerationValue key="filled_blue">Filled Blue</enumerationValue>
+                        <enumerationValue key="filled_black">Filled Black</enumerationValue>
+                    </enumerationValues>
+                </property>
+            </propertyGroup>
         </propertyGroup>
     </properties>
 </widget>

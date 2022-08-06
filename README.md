@@ -1,24 +1,20 @@
 ## SignInWithGoogle
-[My widget description]
+Render the sign in with Google button for external users of your website.
 
 ## Features
-[feature highlights]
+- Renders Google button
+- Adjust the look&feel to your liking
+- Call an action to handle response on Google Login try
 
 ## Usage
-[step by step instructions]
+- Add the widget to your page
+- Connect a string attribute (with unlimited length) to the widget
+- Add a micro/nanoflow for the On Response Action.
 
-## Demo project
-[link to sandbox]
+Everytime a user tries to login via Google the On Response Action will be called and the string attribute will be popuplated with a JWT Token which will hold the information from the user trying to login. An example can be viewed in the documentation:
+https://developers.google.com/identity/gsi/web/reference/js-reference#CredentialResponse
+
+Use the JWT decode action from the JWT module to get the information out of the token, once validated you can login the user in Mendix aswell.
 
 ## Issues, suggestions and feature requests
-[link to GitHub issues]
-
-## Development and contribution
-
-1. Install NPM package dependencies by using: `npm install`. If you use NPM v7.x.x, which can be checked by executing `npm -v`, execute: `npm install --legacy-peer-deps`.
-1. Run `npm start` to watch for code changes. On every change:
-    - the widget will be bundled;
-    - the bundle will be included in a `dist` folder in the root directory of the project;
-    - the bundle will be included in the `deployment` and `widgets` folder of the Mendix test project.
-
-[specify contribution]
+https://github.com/hunterkoppenclevr/signInWithGoogle/issues
