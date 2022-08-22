@@ -9,7 +9,7 @@ export class LoginButton extends Component {
 
     componentDidMount() {
         window.onGoogleLibraryLoad = () => {
-            const { clientId, type, shape, text, size, theme } = this.props;
+            const { clientId, type, shape, text, size, width, theme } = this.props;
 
             google.accounts.id.initialize({
                 client_id: clientId.value,
@@ -21,7 +21,8 @@ export class LoginButton extends Component {
                 theme,
                 size,
                 text,
-                shape
+                shape,
+                width
             });
         };
     }

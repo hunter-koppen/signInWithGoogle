@@ -12,15 +12,22 @@ export class SignInWithGoogle extends Component {
     }
 
     render() {
+        const { clientId, type, shape, text, size, width, theme, responseString } = this.props;
+        let btnWidth = null;
+        if (width && width.value) {
+            btnWidth = width.value;
+        }
+
         return (
             <LoginButton
-                clientId={this.props.clientId}
-                type={this.props.type}
-                shape={this.props.shape}
-                text={this.props.text}
-                size={this.props.size}
-                theme={this.props.theme}
-                responseString={this.props.responseString}
+                clientId={clientId}
+                type={type}
+                shape={shape}
+                text={text}
+                size={size}
+                width={btnWidth}
+                theme={theme}
+                responseString={responseString}
             />
         );
     }

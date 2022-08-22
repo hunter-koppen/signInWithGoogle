@@ -73,6 +73,11 @@
                         <enumerationValue key="filled_black">Filled Black</enumerationValue>
                     </enumerationValues>
                 </property>
+                <property key="width" type="expression" defaultValue="" required="false">
+                    <caption>Width</caption>
+                    <description>Overwrite the width of the button (max 400)</description>
+                    <returnType type="Integer" />
+                </property>
             </propertyGroup>
         </propertyGroup>
     </properties>
